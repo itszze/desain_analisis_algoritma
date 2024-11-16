@@ -1,0 +1,43 @@
+@startuml
+!define RECTANGLE class
+
+' Start
+start
+
+' Add Barang
+:Tambah Barang;
+if (Apakah barang sudah ada?) then (yes)
+  :Tampilkan pesan kesalahan;
+  stop
+else (no)
+  :Masukkan data barang;
+  :Simpan barang ke database;
+  :Tampilkan pesan sukses;
+endif
+
+' Edit Barang
+:Edit Barang;
+if (Apakah barang ditemukan?) then (yes)
+  :Tampilkan form edit;
+  :Perbarui data barang di database;
+  :Tampilkan pesan sukses;
+else (no)
+  :Tampilkan pesan kesalahan;
+endif
+
+' Hapus Barang
+:Hapus Barang;
+if (Apakah barang ditemukan?) then (yes)
+  :Hapus barang dari database;
+  :Tampilkan pesan sukses;
+else (no)
+  :Tampilkan pesan kesalahan;
+endif
+
+' Tampilkan Barang
+:Tampilkan Daftar Barang;
+:Filter dan Pencarian barang;
+:Menampilkan hasil pencarian;
+stop
+
+@enduml

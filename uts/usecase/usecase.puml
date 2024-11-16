@@ -1,0 +1,25 @@
+@startuml
+actor "Admin" as Admin
+actor "User" as User
+
+rectangle "Aplikasi Barang" {
+  usecase "Menambah Barang" as UC1
+  usecase "Mengedit Barang" as UC2
+  usecase "Menghapus Barang" as UC3
+  usecase "Melihat Daftar Barang" as UC4
+  usecase "Mencari Barang" as UC5
+  usecase "Menampilkan Detail Barang" as UC6
+}
+
+Admin --> UC1 : Menambah Barang
+Admin --> UC2 : Mengedit Barang
+Admin --> UC3 : Menghapus Barang
+Admin --> UC4 : Melihat Daftar Barang
+Admin --> UC5 : Mencari Barang
+Admin --> UC6 : Menampilkan Detail Barang
+
+User --> UC4 : Melihat Daftar Barang
+User --> UC5 : Mencari Barang
+User --> UC6 : Menampilkan Detail Barang
+
+@enduml
